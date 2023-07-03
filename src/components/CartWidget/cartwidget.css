@@ -1,0 +1,18 @@
+.cart{
+    height: 25px;
+    margin-left: 20px;
+}
+.notification{
+    background-color: red;
+    color: white;
+    float: right;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+
+
+
