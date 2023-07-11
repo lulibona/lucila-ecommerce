@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css'
-import { NavBar } from './components/navbar/Navbar'
-import { Home } from './components/home/Home'
-// import { Products } from './components/products/Products'
-// import { Nosotros } from './components/nosotros/Nosotros';
+import './App.css';
+import { NavBar } from './components/Navbar/Navbar';
+import { Home } from './components/Home/Home';
+import { Products } from './components/Productos/Products';
+import { Nosotros } from './components/Nosotros/Nosotros';
 
 
 function App() {
@@ -15,8 +15,8 @@ function App() {
       <div className="app_container">
         <NavBar />
         <Home />
-        {/* <Nosotros />
-        <Products /> */}
+        <Nosotros />
+        <Products />
       </div>
       
   )

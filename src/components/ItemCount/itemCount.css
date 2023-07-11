@@ -1,0 +1,29 @@
+.Controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.Button{
+    display: flex;
+    background-color: rgb(113, 28, 193);
+    color: white;
+    border-radius: 10px;
+    margin: 10px;
+    width: 20%;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+}
+
+.Add{
+    padding: 1rem;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: medium;
+}
