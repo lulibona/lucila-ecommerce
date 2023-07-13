@@ -1,28 +1,29 @@
 import './item.css';
+import Card from 'react-bootstrap/Card';
+import { ItemCount } from '../ItemCount/ItemCount';
+
+
 
 const Item = ({id, name, img, price, stock}) => {
     return(
-        <article className='CardItem'>
-            <header className='Header'>
-                <h2 className='ItemHeader'>
-                    {name}
-                </h2>
-            </header>
-            <picture>
-                <img src={img} alt={name} className='ItemImg' />
-            </picture>
-            <section>
-                <p className='Info'>
-                    Precio: ${price}
-                </p>
-                <p className='Info'>
-                    Stock disp: ${stock}
-                </p>
-            </section>
-            <footer className='ItemFooter'>
-                <button className='Option'>Ver detalle</button>
-            </footer>
-        </article>
+    <div className='card_container'>
+        <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={img} alt={name} className='ItemImg'/>
+        <Card.Body>
+            <Card.Title>{name}</Card.Title>
+            <Card.Text>
+            Precio: ${price}
+            </Card.Text>
+            <Card.Text>
+            Stock: {stock}
+            </Card.Text>
+            <a href="#">Ver Detalle</a>
+            <ItemCount initial={1} stock={stock} onAdd={(quantity) => console.log("cdad agregada:", quantity)} />
+        </Card.Body>
+        </Card>
+        
+       
+        </div>
     )
 }
 

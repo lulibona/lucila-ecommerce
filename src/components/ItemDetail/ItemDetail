@@ -1,0 +1,15 @@
+import './itemDetail.css';
+//import Card from 'react-bootstrap/Card';
+import { ItemCount } from '../ItemCount/ItemCount';
+
+
+
+const ItemDetail = () => {
+    return(
+        <div>
+            <p> hola <p/>
+        <div/>
+    )
+}
+
+export default ItemDetail
