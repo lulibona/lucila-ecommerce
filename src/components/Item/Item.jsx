@@ -1,7 +1,6 @@
 import './item.css';
 import Card from 'react-bootstrap/Card';
-import { ItemCount } from '../ItemCount/ItemCount';
-
+import { Link } from 'react-router-dom';
 
 
 const Item = ({id, name, img, price, stock}) => {
@@ -9,7 +8,7 @@ const Item = ({id, name, img, price, stock}) => {
     <div className='card_container'>
         <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={img} alt={name} className='ItemImg'/>
-        <Card.Body>
+        <Card.Body className='card_body'>
             <Card.Title>{name}</Card.Title>
             <Card.Text>
             Precio: ${price}
@@ -17,12 +16,9 @@ const Item = ({id, name, img, price, stock}) => {
             <Card.Text>
             Stock: {stock}
             </Card.Text>
-            <a href="#">Ver Detalle</a>
-            <ItemCount initial={1} stock={stock} onAdd={(quantity) => console.log("cdad agregada:", quantity)} />
+            <Link to={`/item/${id}`} className='Button_detail'>Ver Detalles</Link>
         </Card.Body>
         </Card>
-        
-       
         </div>
     )
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import "./products.css";
 import { ItemListContainer } from '../ItemListContainer/ItemListContainer';
+import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
+
 
 
 export const Products = () => {

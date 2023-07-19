@@ -1,0 +1,14 @@
+.Button_detail{
+    background-color: rgb(113, 28, 193);
+    color: white;
+    border-radius: 10px;
+    margin: 10px;
+    width: 60%;
+    justify-content: center;
+    font-size: large;
+    padding: 10px;
+}
+
+.card_body{
+    text-align: center;
+}
