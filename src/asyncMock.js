@@ -115,5 +115,3 @@ export const getProductById = (itemId) => {
         }, 1000)
     })
 }
-
-

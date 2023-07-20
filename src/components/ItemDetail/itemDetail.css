@@ -1,3 +1,8 @@
 .card_body{
     text-align: center;
 }
+
+.card_detailContainer{
+    padding-top: 20px;
+    padding-left: 40%;
+}

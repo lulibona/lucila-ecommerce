@@ -6,8 +6,8 @@ import Card from 'react-bootstrap/Card';
 const ItemDetail = ({id, name, img, price, stock, category, description}) => {
     return(
 
-        <div className='card_container'>
-        <Card style={{ width: '18rem' }}>
+        <div className='card_detailContainer'>
+        <Card className='card_detail' style={{ width: '18rem' }}>
         <Card.Img variant="top" src={img} alt={name} className='ItemImg'/>
         <Card.Body className='card_body'>
             <Card.Title>{name}</Card.Title>

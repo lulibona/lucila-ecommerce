@@ -7,8 +7,13 @@
     justify-content: center;
     font-size: large;
     padding: 10px;
+    text-decoration: none;
 }
 
 .card_body{
     text-align: center;
+}
+
+.card_container{
+    margin-bottom: 20px;
 }

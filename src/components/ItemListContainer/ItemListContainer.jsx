@@ -8,15 +8,12 @@ export const ItemListContainer = ({saludo}) => {
     const [products, setProducts] = useState([])
     const {categoryId} = useParams()
 
-    console.log(categoryId)
-
-
     useEffect(() => {
         const asyncFunc = categoryId ? getProducts : getProducts
 
         asyncFunc(categoryId)
             .then(response => {
-                setProducts(response)
+                setProducts(response)  
             })
             .catch(error => {
                 console.error(error)
