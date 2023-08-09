@@ -3,8 +3,6 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { NavBar } from './components/Navbar/Navbar';
-import { Home } from './components/Home/Home';
-// import { Products } from './components/Productos/Products';
 import { Nosotros } from './components/Nosotros/Nosotros';
 import { Contacto } from './components/Contacto/Contacto';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
@@ -20,10 +18,8 @@ function App() {
         <BrowserRouter>
           <NavBar />
           <Routes>
-            <Route path='/' element={<Home />}/>
+            <Route path='/' element={<ItemListContainer saludo={"Bienvenido a la tienda online"}/>}/>
             <Route path='/nosotros' element={<Nosotros />}/>
-            {/* <Route path='/products' element={<Products />}/> */}
-            {/* <Route path='/category/:categoryId' element={<ItemListContainer />}/> */}
             <Route path='/category/:categoryId' element={<ItemListContainer />}/>
             <Route path='/item/:itemId' element={<ItemDetailContainer />}/>
             <Route path='/contacto' element={<Contacto />}/>

@@ -87,7 +87,7 @@ const products = [
         price: 22000,
         stock: 14,
         description: 'aca iría la descripcion del producto',
-        category: 'indumentaria',
+        category: 'accesorios',
         img: "https://dummyimage.com/100x100/000"
     }
 ]
