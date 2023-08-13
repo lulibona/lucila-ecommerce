@@ -14,11 +14,10 @@
     width: 20%;
     justify-content: center;
     text-align: center;
-    font-weight: bold;
     font-size: large;
 }
 
-.Add{
+.Long{
     padding: 1rem;
     width: 80%;
     display: flex;
@@ -26,4 +25,5 @@
     margin-left: auto;
     margin-right: auto;
     font-size: medium;
+    text-decoration: none;
 }
