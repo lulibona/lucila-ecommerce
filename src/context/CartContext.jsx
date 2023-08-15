@@ -11,6 +11,10 @@ export const CartProvider = ({children}) => {
     //seteo el estado haciendo un spread del cart(replico el array q ya está) y agrego el item nuevo
   }
 
+  const removerDelCarrito = (id) => {
+    setCart(cart.filter((item) => item.id !== id))  
+  }   //cn filter determino lo q se queda en el array
+
   //varifico si el prod ya fue agregado antes al carrito (some retorna T/F)
   const isInCart = (id) => {
     return cart.some((item) => item.id === id)
@@ -18,6 +22,10 @@ export const CartProvider = ({children}) => {
 
   const totalCompra = () => {
     return cart.reduce((acc, item) => acc + item.price * item.quantity, 0)
+  }
+  
+  const totalCantidad = () => {
+    return cart.reduce((acc, item) => acc + item.quantity, 0)
   }
 
   const vaciarCarrito = () => {
@@ -30,7 +38,9 @@ export const CartProvider = ({children}) => {
         agregarAlCarrito,
         isInCart,
         totalCompra,
-        vaciarCarrito
+        vaciarCarrito,
+        totalCantidad,
+        removerDelCarrito
       }}>   
         {children}
     </CartContext.Provider>

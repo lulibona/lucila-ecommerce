@@ -1,9 +1,10 @@
 import { useContext } from 'react';
 import './cartView.css';
 import { CartContext } from '../../context/CartContext';
+import { BsTrash3 } from "react-icons/bs";
 
 export const CartView = () => {
-    const {cart, totalCompra, vaciarCarrito} = useContext(CartContext)
+    const {cart, totalCompra, vaciarCarrito, removerDelCarrito} = useContext(CartContext)
 
     return(
         <div className='container my-5 carrito'>
@@ -19,13 +20,15 @@ export const CartView = () => {
                             <p className='dato'>Cantidad: {item.quantity}</p>
                             <p className='dato'>Precio a pagar: ${item.price * item.quantity}</p>
                         </div>
+                        <button onClick={() => removerDelCarrito(item.id)} className='Button trash'><BsTrash3/></button>   
+                        {/* cuando a la func necesito pasarle un param, la envuelvo en una func anonima */}
                         <hr />
                     </div>    
                 ))
             }
             <div>
                 <h4>Total: ${totalCompra()}</h4>
-                <button onClick={vaciarCarrito}>Vaciar Carrito</button>
+                <button className="Button empty" onClick={vaciarCarrito}>Vaciar Carrito</button>
             </div>
         </div>
     )
