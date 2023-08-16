@@ -115,3 +115,6 @@
 //         }, 500)
 //     })
 // }
+
+
+//   FIREBASE LINK:    https://console.firebase.google.com/u/0/project/nebula-ecommerce-c8397/firestore/data/~2Fproductos~2Fj48m2n7Nz5qal1krtySm?hl=es
