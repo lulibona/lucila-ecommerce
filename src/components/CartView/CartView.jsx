@@ -2,9 +2,22 @@ import { useContext } from 'react';
 import './cartView.css';
 import { CartContext } from '../../context/CartContext';
 import { BsTrash3 } from "react-icons/bs";
+import { Link } from 'react-router-dom';
 
 export const CartView = () => {
     const {cart, totalCompra, vaciarCarrito, removerDelCarrito} = useContext(CartContext)
+
+    console.log(cart.length)
+
+    if (cart.length === 0) {
+        return(
+            <div className='container my-5 carrito vacio'>
+                <h2>Tu carrito esta vacio</h2>
+                <br />
+                <Link className="Button empty" to="/">Ir a comprar</Link>
+            </div>
+        )
+    }
 
     return(
         <div className='container my-5 carrito'>

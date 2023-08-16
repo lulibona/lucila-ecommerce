@@ -1,10 +1,13 @@
 .brand-name{
     font-size: 40px;
     color: rgb(113, 28, 193);
-    font-weight: bold
+    font-weight: bold;
+    text-decoration: none;
 }
 
-
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
 
 .menu_link{
     padding: 15px;

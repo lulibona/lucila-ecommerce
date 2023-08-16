@@ -11,10 +11,10 @@ const Item = ({item}) => {
         <Card.Body className='card_body'>
             <Card.Title>{item.name}</Card.Title>
             <Card.Text>
-            Precio: ${item.price}
+            Precio: ${item.price} 
             </Card.Text>
-            <Card.Text>
-            Stock: {item.stock}
+            <Card.Text className={`${item.stock < 8 ? "red" : ""}`}>
+            Stock: {item.stock} 
             </Card.Text>
             <Link to={`/item/${item.id}`} className='Button_detail'>Ver Detalles</Link>
         </Card.Body>

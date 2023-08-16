@@ -16,4 +16,10 @@
 
 .card_container{
     margin-bottom: 20px;
+    
+}
+
+.red{
+    color: red;
+    font-weight: bold;
 }

@@ -40,7 +40,7 @@ const products = [
         id:'5',
         name:'Riñonera Urano',
         price: 7000,
-        stock: 8,
+        stock: 7,
         description: 'aca iría la descripcion del producto',
         category: 'accesorios',
         img: "https://dummyimage.com/100x100/000"
@@ -96,7 +96,7 @@ export const getProducts = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(products)
-        }, 1000)
+        }, 500)
     })
 }
 
@@ -104,7 +104,7 @@ export const getProductsByCategory = (categoryId) => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(products.filter(prod => prod.category === categoryId))
-        }, 1000)
+        }, 500)
     })
 }
 
@@ -112,6 +112,6 @@ export const getProductById = (itemId) => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(products.find(prod => prod.id === itemId))
-        }, 1000)
+        }, 500)
     })
 }
