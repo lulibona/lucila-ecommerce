@@ -30,17 +30,6 @@ const ItemDetailContainer = () => {
     }, [])
 
 
-
-    // useEffect(() => {
-    //     getProductById(itemId)
-    //         .then(response => {
-    //             setProduct(response)
-    //         })
-    //         .catch(error => {
-    //             console.error(error)
-    //         })
-    // }, [itemId])
-
     return (
 
         loading

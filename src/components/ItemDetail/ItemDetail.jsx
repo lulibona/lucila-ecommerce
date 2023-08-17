@@ -11,7 +11,6 @@ const ItemDetail = ({id, name, img, price, stock, category, description}) => {
 
     const[quantity, setQuantity] = useState(1)
 
-    console.log(isInCart(id))
     
     const handleAgregar = () => {
          const newItem = { id, name, price , quantity }
