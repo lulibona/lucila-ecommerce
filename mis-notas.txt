@@ -1,0 +1,2 @@
+- crear coleccion en firebase: orders
+- buscar fotos productos y subirlas
