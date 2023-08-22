@@ -12,13 +12,25 @@ const schema = Yup.object().shape({
                 .min(3, "El nombre es demasiado corto")
                 .max(20, "Máximo 20 caracteres")
                 .required("Este campo es obligatorio"),
+    apellido: Yup.string()
+                .min(3, "El apellido es demasiado corto")
+                .max(28, "Máximo 28 caracteres")
+                .required("Este campo es obligatorio"),
     direccion: Yup.string()
                 .min(6, "La direccion es demasiado corta")
                 .max(20, "Máximo 20 caracteres")
                 .required("Este campo es obligatorio"),
+    telefono: Yup.string()
+                .min(8, "El teléfono es demasiado corto")
+                .max(15, "Máximo 15 caracteres")
+                .required("Este campo es obligatorio"),
     email: Yup.string()
                 .required("Este campo es obligatorio")
-                .email("El email es inválido")
+                .email("El email es inválido"),
+    email2: Yup.string()
+                .required("Este campo es obligatorio")
+                .email("El email es inválido") 
+                .oneOf([Yup.ref('email')], 'El email no coincide')  
 })
 
 const Checkout = () => {
@@ -29,8 +41,7 @@ const Checkout = () => {
 
     const handleSubmit = async (values) => {
         setLoading(true)
-        // validaciones de formulario
-        // if (!validaciones) return
+
 
         const orden = {
             cliente: values,
@@ -98,8 +109,11 @@ const Checkout = () => {
             <Formik
                 initialValues={{
                     nombre: '',
+                    apellido: '',
                     direccion: '',
-                    email: ''
+                    telefono: '',
+                    email: '',
+                    email2: ''
                 }}
                 onSubmit={handleSubmit}
                 validationSchema={schema}
@@ -108,10 +122,16 @@ const Checkout = () => {
                     <Form>
                         <Field placeholder="Tu nombre" className="form-control my-2" type="text" name="nombre"/>
                         <ErrorMessage name="nombre" component="p"/>
+                        <Field placeholder="Tu apellido" className="form-control my-2" type="text" name="apellido"/>
+                        <ErrorMessage name="apellido" component="p"/>
                         <Field placeholder="Tu direccion" className="form-control my-2" type="text" name="direccion"/>
                         <ErrorMessage name="direccion" component="p"/>
+                        <Field placeholder="Tu teléfono" className="form-control my-2" type="text" name="telefono"/>
+                        <ErrorMessage name="telefono" component="p"/>
                         <Field placeholder="Tu email" className="form-control my-2" type="email" name="email"/>
                         <ErrorMessage name="email" component="p"/>
+                        <Field placeholder="Confirmación de email" className="form-control my-2" type="email" name="email2"/>
+                        <ErrorMessage name="email2" component="p"/>
                         <button className="btn btn-light Button" disabled={loading}>Enviar</button>
                     </Form>
                 )}
