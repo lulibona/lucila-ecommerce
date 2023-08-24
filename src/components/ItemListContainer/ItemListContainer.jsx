@@ -5,11 +5,11 @@ import { useParams } from "react-router-dom";
 import { Loader } from "../Loader/Loader";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../firebase/config";
+import { Link } from 'react-router-dom';
 
 export const ItemListContainer = ({saludo}) => {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
-    
     const {categoryId} = useParams()
 
     useEffect(() => {
@@ -36,6 +36,17 @@ export const ItemListContainer = ({saludo}) => {
             .catch(e => console.log(e))
             .finally(() => setLoading(false))
     }, [categoryId])
+
+    // si la ruta tiene categoryId pero la categoria no existe, devuelve:
+    if( categoryId && products.length == 0){
+        return(
+            <div className=' jumbotron container my-5 carrito vacio'>
+                <h2>La categoría seleccionada no existe</h2>
+                <br/>
+                <Link className="Button empty comprar" to="/">Ir a comprar</Link>
+            </div>
+        )
+    }
 
 
     return (
