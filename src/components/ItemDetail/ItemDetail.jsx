@@ -9,7 +9,7 @@ import { Link } from "react-router-dom"
 const ItemDetail = ({id, name, img, price, stock, category, description}) => {
     const { agregarAlCarrito, isInCart } = useContext(CartContext)
 
-    const[quantity, setQuantity] = useState(1)
+    const[quantity, setQuantity] = useState(0)
 
     
     const handleAgregar = () => {

@@ -25,7 +25,7 @@ export const ItemCount  = ({stock, counter, setCounter, agregar})=> {
                     <button className='Button' onClick={increment}>+</button>
                 </div>
                 <div>
-                    <button className='Button Long' onClick={agregar}>Agregar al Carrito</button>
+                    <button className={stock>0 ? 'Button Long':'Button Long disabled'} onClick={agregar} disabled={stock === 0} >Agregar al Carrito</button>
                 </div>
             </div>
         )
